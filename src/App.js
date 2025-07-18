@@ -9,26 +9,41 @@ import ChartSection from './components/ChartSection';
 import AssignmentsSection from './components/AssignmentsSection';
 import RightSidebar from './components/RightSidebar';
 import BottomProfileMessages from './components/BottomProfileMessages';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import MilestonePage from './components/MilestonePage';
+
+function DashboardLayout() {
+  return (
+    <>
+      <Header />
+      <WelcomeSection />
+      <StatsGrid />
+      <div className="content-row">
+        <NoticeBoard />
+        <ChartSection />
+      </div>
+      <AssignmentsSection />
+      <BottomProfileMessages />
+    </>
+  );
+}
 
 function App() {
   return (
-    <div className="dashboard-container">
-      <Sidebar />
+    <Router>
+      <div className="dashboard-container">
+        <Sidebar />
 
-      <div className="main-content">
-        <Header />
-        <WelcomeSection />
-        <StatsGrid />
-        <div className="content-row">
-          <NoticeBoard />
-          <ChartSection />
+        <div className="main-content">
+          <Routes>
+            <Route path="/" element={<DashboardLayout />} />
+            <Route path="/milestones" element={<MilestonePage />} />
+          </Routes>
         </div>
-        <AssignmentsSection />
-        <BottomProfileMessages />
-      </div>
 
-      <RightSidebar />
-    </div>
+        <RightSidebar />
+      </div>
+    </Router>
   );
 }
 
