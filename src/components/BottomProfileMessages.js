@@ -26,7 +26,6 @@ function BottomProfileMessages() {
         </div>
         <div className="message-list">
           <div className="message-item">
-            <img src="https://pixabay.com/get/gde97a83c07df6bb52e12c070262f82e07d75595c0b536be4acee71fe910fe9c3e2dc612dc87562f3b078b115946391292b5ddd490e6281dfe0cdc9f3898a1ba4_640.jpg" alt="Jane Cooper" className="message-avatar" />
             <div className="message-content">
               <div className="message-name">Jane Cooper</div>
               <div className="message-preview">Hey, how's your project going?</div>
