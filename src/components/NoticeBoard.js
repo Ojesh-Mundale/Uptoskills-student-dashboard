@@ -9,7 +9,7 @@ function NoticeBoard() {
       </div>
       <div className="notice-item">
         <div className="notice-icon yellow">!</div>
-        <span>Company Hiring</span>
+        <span className='company'>Company Hiring</span>
       </div>
       <div className="notice-item">
         <div className="notice-icon blue">i</div>

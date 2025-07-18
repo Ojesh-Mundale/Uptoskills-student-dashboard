@@ -40,6 +40,9 @@ body {
     color: #06b6d4;
 }
 
+.bottom-profile-messages{
+    color: #1e293b;
+}
 .nav-menu {
     flex: 1;
 }
@@ -69,7 +72,9 @@ body {
     gap: 12px;
     padding: 16px;
     border-top: 1px solid #334155;
+    
 }
+
 
 .user-avatar {
     width: 40px;
@@ -159,10 +164,12 @@ body {
 }
 
 .welcome-content h1 {
-    font-size: 32px;
-    font-weight: 700;
-    margin-bottom: 16px;
+  color:  #1e293b; /* dark gray (works on white background) */
+  font-size: 28px;
+  font-weight: bold;
 }
+
+
 
 .welcome-content p {
     color: #64748b;
@@ -194,6 +201,7 @@ body {
     align-items: center;
     gap: 16px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    color:  #1e293b;
 }
 
 .stat-icon {
@@ -245,6 +253,7 @@ body {
 .section-header h3 {
     font-size: 18px;
     font-weight: 600;
+    color:black;
 }
 
 .view-all {
@@ -263,6 +272,7 @@ body {
     margin-bottom: 8px;
     background: #f8fafc;
     border-radius: 8px;
+    color:  #1e293b;
 }
 
 .notice-icon {
@@ -286,6 +296,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+
 }
 
 .assignments-section {
@@ -293,6 +304,7 @@ body {
     border-radius: 12px;
     padding: 24px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    color:  #1e293b;
 }
 
 .search-assignments {
@@ -302,6 +314,8 @@ body {
     border-radius: 8px;
     padding: 8px 12px;
     width: 200px;
+    
+
 }
 
 .search-assignments input {
@@ -311,6 +325,7 @@ body {
     margin-left: 8px;
     flex: 1;
     font-size: 14px;
+    
 }
 
 .table-container {
@@ -520,6 +535,7 @@ body {
     border-radius: 4px;
     margin: 8px 0;
     overflow: hidden;
+    color: #16a34a;
 }
 
 .progress-fill {
@@ -615,5 +631,16 @@ body {
   overflow-x: auto;
   gap: 1rem;
   padding: 1rem 0;
+}
+
+.nav-item.active {
+  background-color:#1e40af; ;
+  color:white; /* dark blue text */
+  font-weight: bold;
+}
+.nav-item{
+
+  color:white; /* dark blue text */
+  font-weight: bold;
 }
 
