@@ -13,6 +13,7 @@ import BottomProfileMessages from './components/dashboard/BottomProfileMessages'
 import EditProfilePage from './components/EditProfile/EditProfilePage';
 import MyProjects from './components/myProjects/MyProjects';
 import MilestonePage from './components/milestonesPage/milestonePage';
+import NotificationsPage from './components/NotificationsPage/NotificationsPage';
 
 import { useState } from 'react';
 
@@ -50,6 +51,7 @@ function App() {
         <Route path="/edit-profile" element={<EditProfilePage />} />
         <Route path="/my-project" element={<MyProjects />} />
         <Route path="/milestones" element={<MilestonePage />} />
+        <Route path="/notifications" element={<NotificationsPage />} />
       </Routes>
     </Router>
   );
