@@ -1,5 +1,6 @@
 .student-profile-form {
-  max-width: 600px;
+  width: 95%;
+  max-width: none;
   margin: 0 auto;
   background: white;
   padding: 24px;
