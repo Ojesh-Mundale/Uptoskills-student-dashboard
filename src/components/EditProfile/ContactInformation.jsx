@@ -2,83 +2,62 @@ import React from 'react';
 
 const ContactInformation = () => {
   return (
-    <section className="form-section" style={{ marginBottom: '40px' }}>
-      <h2 style={{ fontSize: '20px', fontWeight: 600, marginBottom: '24px', color: '#111827', paddingBottom: '8px', borderBottom: '1px solid #e5e7eb' }}>
+    <section className="mb-10">
+      <h2 className="text-xl font-semibold mb-6 text-gray-900 border-b border-gray-200 pb-2">
         Contact Information
       </h2>
-      <div className="form-row" style={{ display: 'flex', gap: '16px', marginBottom: '20px' }}>
-        <div className="form-group" style={{ flex: 1 }}>
-          <label style={{ display: 'block', marginBottom: '8px', fontWeight: 500, color: '#374151' }}>Phone</label>
-          <input type="text" placeholder="Contact number" className="form-input" style={{
-            width: '100%',
-            padding: '12px',
-            border: '1px solid #d1d5db',
-            borderRadius: '8px',
-            fontSize: '14px',
-            background: 'white'
-          }} />
+      <div className="flex gap-4 mb-5">
+        <div className="flex-1">
+          <label className="block mb-2 font-medium text-gray-700">Phone</label>
+          <input
+            type="text"
+            placeholder="Contact number"
+            className="w-full px-3 py-3 border border-gray-300 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
         </div>
-        <div className="form-group" style={{ flex: 1 }}>
-          <label style={{ display: 'block', marginBottom: '8px', fontWeight: 500, color: '#374151' }}>Email</label>
-          <input type="email" placeholder="example@gmail.com" className="form-input" style={{
-            width: '100%',
-            padding: '12px',
-            border: '1px solid #d1d5db',
-            borderRadius: '8px',
-            fontSize: '14px',
-            background: 'white'
-          }} />
+        <div className="flex-1">
+          <label className="block mb-2 font-medium text-gray-700">Email</label>
+          <input
+            type="email"
+            placeholder="example@gmail.com"
+            className="w-full px-3 py-3 border border-gray-300 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
         </div>
       </div>
 
-      <div className="form-group" style={{ marginBottom: '20px' }}>
-        <label style={{ display: 'block', marginBottom: '8px', fontWeight: 500, color: '#374151' }}>Address</label>
-        <input type="text" placeholder="Area and Street" className="form-input" style={{
-          width: '100%',
-          padding: '12px',
-          border: '1px solid #d1d5db',
-          borderRadius: '8px',
-          fontSize: '14px',
-          background: 'white'
-        }} />
+      <div className="mb-5">
+        <label className="block mb-2 font-medium text-gray-700">Address</label>
+        <input
+          type="text"
+          placeholder="Area and Street"
+          className="w-full px-3 py-3 border border-gray-300 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
       </div>
 
-      <div className="form-row" style={{ display: 'flex', gap: '16px', marginBottom: '20px' }}>
-        <input type="text" placeholder="Location" className="form-input" style={{
-          flex: 1,
-          padding: '12px',
-          border: '1px solid #d1d5db',
-          borderRadius: '8px',
-          fontSize: '14px',
-          background: 'white'
-        }} />
-        <input type="text" placeholder="District" className="form-input" style={{
-          flex: 1,
-          padding: '12px',
-          border: '1px solid #d1d5db',
-          borderRadius: '8px',
-          fontSize: '14px',
-          background: 'white'
-        }} />
+      <div className="flex gap-4 mb-5">
+        <input
+          type="text"
+          placeholder="Location"
+          className="flex-1 px-3 py-3 border border-gray-300 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        <input
+          type="text"
+          placeholder="District"
+          className="flex-1 px-3 py-3 border border-gray-300 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
       </div>
 
-      <div className="form-row" style={{ display: 'flex', gap: '16px', marginBottom: '20px' }}>
-        <input type="text" placeholder="Pincode" className="form-input" style={{
-          flex: 1,
-          padding: '12px',
-          border: '1px solid #d1d5db',
-          borderRadius: '8px',
-          fontSize: '14px',
-          background: 'white'
-        }} />
-        <input type="text" placeholder="State" className="form-input" style={{
-          flex: 1,
-          padding: '12px',
-          border: '1px solid #d1d5db',
-          borderRadius: '8px',
-          fontSize: '14px',
-          background: 'white'
-        }} />
+      <div className="flex gap-4">
+        <input
+          type="text"
+          placeholder="Pincode"
+          className="flex-1 px-3 py-3 border border-gray-300 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        <input
+          type="text"
+          placeholder="State"
+          className="flex-1 px-3 py-3 border border-gray-300 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
       </div>
     </section>
   );

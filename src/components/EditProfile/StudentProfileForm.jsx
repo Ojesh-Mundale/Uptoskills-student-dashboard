@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import './StudentProfileForm.css';
 
 const StudentProfileForm = () => {
   const [formData, setFormData] = useState({
@@ -27,9 +26,9 @@ const StudentProfileForm = () => {
   };
 
   return (
-    <form className="student-profile-form" onSubmit={handleSubmit}>
-      <div className="form-group">
-        <label htmlFor="full_name">Full Name</label>
+    <form className="w-[95%] max-w-none mx-auto bg-white p-6 rounded-lg shadow-md font-sans" onSubmit={handleSubmit}>
+      <div className="mb-4 flex flex-col">
+        <label className="font-semibold mb-2 text-gray-700" htmlFor="full_name">Full Name</label>
         <input
           type="text"
           id="full_name"
@@ -38,11 +37,12 @@ const StudentProfileForm = () => {
           onChange={handleChange}
           placeholder="Enter full name"
           required
+          className="p-2.5 border border-gray-300 rounded-md text-sm font-inherit resize-vertical"
         />
       </div>
 
-      <div className="form-group">
-        <label htmlFor="contact_number">Contact Number</label>
+      <div className="mb-4 flex flex-col">
+        <label className="font-semibold mb-2 text-gray-700" htmlFor="contact_number">Contact Number</label>
         <input
           type="text"
           id="contact_number"
@@ -51,11 +51,12 @@ const StudentProfileForm = () => {
           onChange={handleChange}
           placeholder="Enter contact number"
           required
+          className="p-2.5 border border-gray-300 rounded-md text-sm font-inherit resize-vertical"
         />
       </div>
 
-      <div className="form-group">
-        <label htmlFor="linkedin_url">LinkedIn URL</label>
+      <div className="mb-4 flex flex-col">
+        <label className="font-semibold mb-2 text-gray-700" htmlFor="linkedin_url">LinkedIn URL</label>
         <input
           type="url"
           id="linkedin_url"
@@ -63,11 +64,12 @@ const StudentProfileForm = () => {
           value={formData.linkedin_url}
           onChange={handleChange}
           placeholder="Enter LinkedIn profile URL"
+          className="p-2.5 border border-gray-300 rounded-md text-sm font-inherit resize-vertical"
         />
       </div>
 
-      <div className="form-group">
-        <label htmlFor="github_url">GitHub URL</label>
+      <div className="mb-4 flex flex-col">
+        <label className="font-semibold mb-2 text-gray-700" htmlFor="github_url">GitHub URL</label>
         <input
           type="url"
           id="github_url"
@@ -75,11 +77,12 @@ const StudentProfileForm = () => {
           value={formData.github_url}
           onChange={handleChange}
           placeholder="Enter GitHub profile URL"
+          className="p-2.5 border border-gray-300 rounded-md text-sm font-inherit resize-vertical"
         />
       </div>
 
-      <div className="form-group">
-        <label htmlFor="why_hire_me">Why Hire Me</label>
+      <div className="mb-4 flex flex-col">
+        <label className="font-semibold mb-2 text-gray-700" htmlFor="why_hire_me">Why Hire Me</label>
         <textarea
           id="why_hire_me"
           name="why_hire_me"
@@ -87,22 +90,24 @@ const StudentProfileForm = () => {
           onChange={handleChange}
           placeholder="Explain why someone should hire you"
           rows="4"
+          className="p-2.5 border border-gray-300 rounded-md text-sm font-inherit resize-vertical"
         />
       </div>
 
-      <div className="form-group checkbox-group">
+      <div className="mb-4 flex flex-row items-center">
         <input
           type="checkbox"
           id="profile_completed"
           name="profile_completed"
           checked={formData.profile_completed}
           onChange={handleChange}
+          className="mr-2 w-auto self-start"
         />
-        <label htmlFor="profile_completed">Profile Completed</label>
+        <label className="font-semibold text-gray-700" htmlFor="profile_completed">Profile Completed</label>
       </div>
 
-      <div className="form-group">
-        <label htmlFor="ai_skill_summary">AI Skill Summary</label>
+      <div className="mb-4 flex flex-col">
+        <label className="font-semibold mb-2 text-gray-700" htmlFor="ai_skill_summary">AI Skill Summary</label>
         <textarea
           id="ai_skill_summary"
           name="ai_skill_summary"
@@ -110,10 +115,16 @@ const StudentProfileForm = () => {
           onChange={handleChange}
           placeholder="Summarize your AI skills"
           rows="4"
+          className="p-2.5 border border-gray-300 rounded-md text-sm font-inherit resize-vertical"
         />
       </div>
 
-      <button type="submit" className="submit-btn">Save Profile</button>
+      <button
+        type="submit"
+        className="bg-blue-500 text-white py-3 px-5 border-none rounded-md font-bold cursor-pointer transition-colors duration-200 hover:bg-blue-700"
+      >
+        Save Profile
+      </button>
     </form>
   );
 };

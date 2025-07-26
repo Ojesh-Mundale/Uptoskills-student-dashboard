@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import './SkillBadgeForm.css';
 
 import Header from '../dashboard/Header';
 import Sidebar from '../dashboard/Sidebar';
@@ -39,10 +38,10 @@ const SkillBadgeForm = () => {
       <div className={`main-content${isSidebarVisible ? '' : ' full-width'}`}>
         <Header toggleSidebar={toggleSidebar} />
 
-        <div className="badge-form-container">
-          <h2>Add New Skill Badge</h2>
-          <form className="badge-form" onSubmit={handleSubmit}>
-            <label>
+        <div className="p-6 bg-white rounded-lg shadow-md">
+          <h2 className="text-2xl font-semibold mb-6">Add New Skill Badge</h2>
+          <form className="space-y-4" onSubmit={handleSubmit}>
+            <label className="block">
               Student ID:
               <input
                 type="number"
@@ -51,10 +50,11 @@ const SkillBadgeForm = () => {
                 value={formData.student_id}
                 onChange={handleChange}
                 required
+                className="w-full mt-1 p-2 border border-gray-300 rounded-md"
               />
             </label>
 
-            <label>
+            <label className="block">
               Badge Name:
               <input
                 type="text"
@@ -63,10 +63,11 @@ const SkillBadgeForm = () => {
                 value={formData.badge_name}
                 onChange={handleChange}
                 required
+                className="w-full mt-1 p-2 border border-gray-300 rounded-md"
               />
             </label>
 
-            <label>
+            <label className="block">
               Badge Description:
               <textarea
                 name="badge_description"
@@ -74,20 +75,27 @@ const SkillBadgeForm = () => {
                 value={formData.badge_description}
                 onChange={handleChange}
                 required
+                className="w-full mt-1 p-2 border border-gray-300 rounded-md"
               ></textarea>
             </label>
 
-            <label className="checkbox-label">
+            <label className="inline-flex items-center space-x-2">
               <input
                 type="checkbox"
                 name="verified"
                 checked={formData.verified}
                 onChange={handleChange}
+                className="form-checkbox"
               />
-              Verified
+              <span>Verified</span>
             </label>
 
-            <button type="submit">Submit</button>
+            <button
+              type="submit"
+              className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition"
+            >
+              Submit
+            </button>
           </form>
         </div>
       </div>

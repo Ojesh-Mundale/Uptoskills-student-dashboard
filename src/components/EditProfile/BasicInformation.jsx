@@ -17,85 +17,57 @@ const BasicInformation = () => {
   };
 
   return (
-    <section className="form-section" style={{ marginBottom: '40px' }}>
-      <h2 style={{ fontSize: '20px', fontWeight: 600, marginBottom: '24px', color: '#111827', paddingBottom: '8px', borderBottom: '1px solid #e5e7eb' }}>
+    <section className="mb-10">
+      <h2 className="text-xl font-semibold mb-6 text-gray-900 border-b border-gray-200 pb-2">
         Basic Information
       </h2>
-      <div className="form-row" style={{ display: 'flex', gap: '16px', marginBottom: '20px' }}>
-        <div className="form-group" style={{ flex: 1 }}>
-          <label style={{ display: 'block', marginBottom: '8px', fontWeight: 500, color: '#374151' }}>First Name</label>
-          <input type="text" placeholder="First Name" className="form-input" style={{
-            width: '100%',
-            padding: '12px',
-            border: '1px solid #d1d5db',
-            borderRadius: '8px',
-            fontSize: '14px',
-            background: 'white'
-          }} />
+      <div className="flex gap-4 mb-5">
+        <div className="flex-1">
+          <label className="block mb-2 font-medium text-gray-700">First Name</label>
+          <input
+            type="text"
+            placeholder="First Name"
+            className="w-full px-3 py-3 border border-gray-300 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
         </div>
-        <div className="form-group" style={{ flex: 1 }}>
-          <label style={{ display: 'block', marginBottom: '8px', fontWeight: 500, color: '#374151' }}>Last Name</label>
-          <input type="text" placeholder="Last Name" className="form-input" style={{
-            width: '100%',
-            padding: '12px',
-            border: '1px solid #d1d5db',
-            borderRadius: '8px',
-            fontSize: '14px',
-            background: 'white'
-          }} />
+        <div className="flex-1">
+          <label className="block mb-2 font-medium text-gray-700">Last Name</label>
+          <input
+            type="text"
+            placeholder="Last Name"
+            className="w-full px-3 py-3 border border-gray-300 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
         </div>
       </div>
 
-      <div className="form-row" style={{ display: 'flex', gap: '16px', marginBottom: '20px' }}>
-        <div className="form-group" style={{ flex: 1 }}>
-          <label style={{ display: 'block', marginBottom: '8px', fontWeight: 500, color: '#374151' }}>Gender</label>
-          <div className="radio-group" style={{ display: 'flex', gap: '24px', marginTop: '8px' }}>
-            <label className="radio-label" style={{ display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer', fontWeight: 400 }}>
+      <div className="flex gap-4 mb-5">
+        <div className="flex-1">
+          <label className="block mb-2 font-medium text-gray-700">Gender</label>
+          <div className="flex gap-6 mt-2">
+            <label className="flex items-center gap-2 cursor-pointer font-normal">
               <input type="radio" name="gender" value="male" defaultChecked />
               Male
             </label>
-            <label className="radio-label" style={{ display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer', fontWeight: 400 }}>
+            <label className="flex items-center gap-2 cursor-pointer font-normal">
               <input type="radio" name="gender" value="female" />
               Female
             </label>
           </div>
         </div>
         <div
-          className="upload-area"
-          style={{
-            border: '2px dashed #d1d5db',
-            borderRadius: '8px',
-            padding: '32px',
-            textAlign: 'center',
-            background: '#fafafa',
-            flex: 1,
-            cursor: 'pointer'
-          }}
+          className="flex-1 border-2 border-dashed border-gray-300 rounded-lg p-8 text-center bg-gray-50 cursor-pointer"
           onClick={handleUploadAreaClick}
         >
-          <input
-            type="file"
-            ref={fileInputRef}
-            style={{ display: 'none' }}
-          />
-          <div className="upload-icon" style={{ color: '#9ca3af', marginBottom: '12px' }}>
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+          <input type="file" ref={fileInputRef} className="hidden" />
+          <div className="text-gray-400 mb-3">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" className="mx-auto">
               <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z" />
             </svg>
           </div>
-          <p style={{ marginBottom: '12px', color: '#6b7280' }}>Drop your files to upload</p>
+          <p className="mb-3 text-gray-500">Drop your files to upload</p>
           <button
             type="button"
-            className="select-files-btn"
-            style={{
-              background: 'none',
-              border: '1px solid #d1d5db',
-              padding: '8px 16px',
-              borderRadius: '6px',
-              cursor: 'pointer',
-              fontSize: '14px',
-              color: '#374151'
-            }}
+            className="border border-gray-300 px-4 py-2 rounded-md text-sm text-gray-700 hover:bg-gray-100 focus:outline-none"
             onClick={openFileDialog}
           >
             Select files
@@ -103,42 +75,29 @@ const BasicInformation = () => {
         </div>
       </div>
 
-      <div className="form-row" style={{ display: 'flex', gap: '16px', marginBottom: '20px' }}>
-        <div className="form-group" style={{ flex: 1 }}>
-          <label style={{ display: 'block', marginBottom: '8px', fontWeight: 500, color: '#374151' }}>Date of Birth</label>
-          <input type="text" placeholder="dd/mm/yyyy" className="form-input" style={{
-            width: '100%',
-            padding: '12px',
-            border: '1px solid #d1d5db',
-            borderRadius: '8px',
-            fontSize: '14px',
-            background: 'white'
-          }} />
+      <div className="flex gap-4 mb-5">
+        <div className="flex-1">
+          <label className="block mb-2 font-medium text-gray-700">Date of Birth</label>
+          <input
+            type="text"
+            placeholder="dd/mm/yyyy"
+            className="w-full px-3 py-3 border border-gray-300 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
         </div>
       </div>
 
-      <div className="form-row" style={{ display: 'flex', gap: '16px', marginBottom: '20px' }}>
-        <div className="form-group" style={{ flex: 1 }}>
-          <select className="form-select" style={{
-            width: '100%',
-            padding: '12px',
-            border: '1px solid #d1d5db',
-            borderRadius: '8px',
-            fontSize: '14px',
-            background: 'white'
-          }}>
+      <div className="flex gap-4">
+        <div className="flex-1">
+          <select
+            className="w-full px-3 py-3 border border-gray-300 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+          >
             <option>Class</option>
           </select>
         </div>
-        <div className="form-group" style={{ flex: 1 }}>
-          <select className="form-select" style={{
-            width: '100%',
-            padding: '12px',
-            border: '1px solid #d1d5db',
-            borderRadius: '8px',
-            fontSize: '14px',
-            background: 'white'
-          }}>
+        <div className="flex-1">
+          <select
+            className="w-full px-3 py-3 border border-gray-300 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+          >
             <option>Section</option>
           </select>
         </div>

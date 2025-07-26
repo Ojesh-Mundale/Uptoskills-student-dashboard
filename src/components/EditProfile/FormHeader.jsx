@@ -2,7 +2,7 @@ import React from 'react';
 
 const FormHeader = () => {
   return (
-    <div className="form-header" style={{ marginBottom: '32px' }}>
+    <div className="mb-8 form-header">
       {/* Title removed as per user request */}
     </div>
   );

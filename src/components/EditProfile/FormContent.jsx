@@ -8,12 +8,12 @@ import FormActions from './FormActions';
 
 const FormContent = () => {
   return (
-    <div className="form-content" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '48px' }}>
-      <div className="form-left">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 form-content">
+      <div className="form-left space-y-8">
         <BasicInformation />
         <ProfessionalDetails />
       </div>
-      <div className="form-right">
+      <div className="form-right space-y-8">
         <Skills />
         <ContactInformation />
         <Resume />

@@ -2,29 +2,22 @@ import React from 'react';
 
 const Skills = () => {
   return (
-    <section className="form-section" style={{ marginBottom: '40px' }}>
-      <div className="section-header" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '24px' }}>
-        <h2 style={{ fontSize: '20px', fontWeight: 600, marginBottom: 0, borderBottom: 'none', paddingBottom: 0 }}>Skills</h2>
-        <button className="add-btn" style={{
-          background: '#f3f4f6',
-          border: 'none',
-          width: '32px',
-          height: '32px',
-          borderRadius: '6px',
-          cursor: 'pointer',
-          fontSize: '18px',
-          color: '#6b7280'
-        }}>+</button>
+    <section className="mb-10">
+      <div className="flex items-center justify-between mb-6 section-header">
+        <h2 className="text-xl font-semibold mb-0">Skills</h2>
+        <button
+          className="bg-gray-200 rounded-md w-8 h-8 flex items-center justify-center text-gray-500 text-xl hover:bg-gray-300 focus:outline-none"
+          aria-label="Add skill"
+        >
+          +
+        </button>
       </div>
-      <div className="form-row" style={{ display: 'flex', gap: '16px', marginBottom: '20px' }}>
-        <input type="text" placeholder="skill name" className="form-input" style={{
-          flex: 1,
-          padding: '12px',
-          border: '1px solid #d1d5db',
-          borderRadius: '8px',
-          fontSize: '14px',
-          background: 'white'
-        }} />
+      <div className="form-row mb-5">
+        <input
+          type="text"
+          placeholder="skill name"
+          className="w-full px-3 py-3 border border-gray-300 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
       </div>
     </section>
   );

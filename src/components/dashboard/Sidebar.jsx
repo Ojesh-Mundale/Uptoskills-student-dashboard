@@ -10,8 +10,8 @@ function Sidebar({ isSidebarVisible }) {
 
   const getNavItemStyle = (item) => {
     return item === activeItem
-      ? { backgroundColor: 'rgba(255, 255, 255, 0.15)', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '12px', padding: '12px 16px', marginBottom: '4px', borderRadius: '8px', fontWeight: 500 }
-      : { cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '12px', padding: '12px 16px', marginBottom: '4px', borderRadius: '8px', fontWeight: 500 };
+      ? "bg-white/15 cursor-pointer flex items-center gap-3 p-3 mb-1 rounded-md font-medium"
+      : "cursor-pointer flex items-center gap-3 p-3 mb-1 rounded-md font-medium";
   };
 
   if (!isSidebarVisible) {
@@ -26,8 +26,7 @@ function Sidebar({ isSidebarVisible }) {
 
       <nav className="nav-menu">
         <div
-          className="nav-item"
-          style={getNavItemStyle('dashboard')}
+          className={getNavItemStyle('dashboard')}
           onClick={() => handleNavClick('dashboard', '/')}
         >
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -36,8 +35,7 @@ function Sidebar({ isSidebarVisible }) {
           {'Dashboard'}
         </div>
         <div
-          className="nav-item"
-          style={getNavItemStyle('edit-profile')}
+          className={getNavItemStyle('edit-profile')}
           onClick={() => handleNavClick('edit-profile', '/edit-profile')}
         >
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -46,8 +44,7 @@ function Sidebar({ isSidebarVisible }) {
           {'Edit Profile'}
         </div>
         <div
-          className="nav-item"
-          style={getNavItemStyle('my-project')}
+          className={getNavItemStyle('my-project')}
           onClick={() => handleNavClick('my-project', '/my-project')}
         >
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -56,8 +53,7 @@ function Sidebar({ isSidebarVisible }) {
           {'My Project'}
         </div>
         <div
-          className="nav-item"
-          style={getNavItemStyle('skillbadges')}
+          className={getNavItemStyle('skillbadges')}
           onClick={() => handleNavClick('skillbadges', '/SkillBadges')}
         >
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -66,8 +62,7 @@ function Sidebar({ isSidebarVisible }) {
           {'Skill Badges'}
         </div>
         <div
-          className="nav-item"
-          style={getNavItemStyle('message')}
+          className={getNavItemStyle('message')}
           onClick={() => handleNavClick('message', '/notifications')}
         >
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -76,8 +71,7 @@ function Sidebar({ isSidebarVisible }) {
           {'Notifications'}
         </div>
         <div
-          className="nav-item"
-          style={getNavItemStyle('admin-panel')}
+          className={getNavItemStyle('admin-panel')}
           onClick={() => handleNavClick('admin-panel', '/admin-panel')}
         >
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">

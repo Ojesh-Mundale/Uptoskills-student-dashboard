@@ -28,23 +28,32 @@ function CalendarWidget() {
   }, []);
 
   return (
-    <div className="calendar-widget">
-      <div className="calendar-header">
-        <h4>{`${calendarData.month} ${calendarData.year}`}</h4>
+    <div className="p-4 bg-white rounded shadow calendar-widget">
+      <div className="calendar-header mb-2">
+        <h4 className="text-lg font-semibold">{`${calendarData.month} ${calendarData.year}`}</h4>
       </div>
       <div className="calendar-grid">
-        <div className="calendar-days">
+        <div className="grid grid-cols-7 gap-1 calendar-days text-center font-semibold text-gray-600">
           <span>SUN</span><span>MON</span><span>TUE</span>
           <span>WED</span><span>THU</span><span>FRI</span><span>SAT</span>
         </div>
-        <div className="calendar-dates">
+        <div className="grid grid-cols-7 gap-1 calendar-dates text-center">
           {calendarData.days.map((day, index) => {
             const today = new Date();
             const isToday =
               day === today.getDate() &&
               calendarData.month === today.toLocaleString('default', { month: 'long' }) &&
               calendarData.year === today.getFullYear();
-            return <span key={index} className={isToday ? 'today' : ''}>{day || ''}</span>;
+            return (
+              <span
+                key={index}
+                className={`inline-block p-2 rounded ${
+                  isToday ? 'bg-blue-500 text-white font-bold' : ''
+                }`}
+              >
+                {day || ''}
+              </span>
+            );
           })}
         </div>
       </div>

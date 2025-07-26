@@ -66,10 +66,10 @@ function ChartSection() {
   }, []);
 
   return (
-    <div className="chart-section">
-      <div className="section-header">
-        <h3>Test Score activity</h3>
-        <select className="time-filter">
+    <div className="p-4 bg-white rounded shadow chart-section">
+      <div className="section-header flex justify-between items-center mb-4">
+        <h3 className="text-lg font-semibold">Test Score activity</h3>
+        <select className="time-filter border border-gray-300 rounded px-2 py-1 focus:outline-none focus:ring-2 focus:ring-blue-500">
           <option>Monthly</option>
           <option>Weekly</option>
           <option>Daily</option>

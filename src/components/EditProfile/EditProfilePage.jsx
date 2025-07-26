@@ -42,11 +42,11 @@ const EditProfilePage = () => {
   };
 
   return (
-    <div className="dashboard-container" style={{ display: 'flex', height: '100vh' }}>
+    <div className="flex h-screen dashboard-container">
       {isSidebarVisible && <Sidebar isSidebarVisible={isSidebarVisible} />}
-      <div className={`main-content${isSidebarVisible ? '' : ' full-width'}`} style={{ flex: 1, display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
+      <div className={`flex-1 flex flex-col overflow-hidden main-content${isSidebarVisible ? '' : ' full-width'}`}>
         <Header toggleSidebar={toggleSidebar} />
-        <div className="edit-profile-content" style={{ flex: 1, overflowY: 'auto', padding: '24px', display: 'flex', gap: '40px' }}>
+        <div className="flex-1 overflow-y-auto p-6 edit-profile-content flex gap-10">
           <StudentProfileForm onSubmit={handleFormSubmit} />
           <DomainsOfInterest selectedDomains={domainsOfInterest} onChange={handleDomainChange} othersValue={othersDomain} />
         </div>
