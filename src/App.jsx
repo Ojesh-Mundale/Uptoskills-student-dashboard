@@ -17,7 +17,7 @@ import NotificationsPage from './components/NotificationsPage/NotificationsPage'
 
 import { useState } from 'react';
 
-function Dashboard() {
+function Dashboard({ isDarkMode, toggleDarkMode }) {
   const [isSidebarVisible, setIsSidebarVisible] = useState(true);
 
   const toggleSidebar = () => {
@@ -25,10 +25,10 @@ function Dashboard() {
   };
 
   return (
-    <div className="dashboard-container">
-      {isSidebarVisible && <Sidebar isSidebarVisible={isSidebarVisible} />}
+    <div className={`dashboard-container${isDarkMode ? ' dark' : ''}`}>
+      {isSidebarVisible && <Sidebar isSidebarVisible={isSidebarVisible} isDarkMode={isDarkMode} />}
       <div className={`main-content${isSidebarVisible ? '' : ' full-width'}`}>
-        <Header toggleSidebar={toggleSidebar} />
+        <Header toggleSidebar={toggleSidebar} isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
         <WelcomeSection />
         <StatsGrid />
         <div className="content-row">
@@ -44,16 +44,24 @@ function Dashboard() {
 }
 
 function App() {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  const toggleDarkMode = () => {
+    setIsDarkMode((prev) => !prev);
+  };
+
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Dashboard />} />
-        <Route path="/edit-profile" element={<EditProfilePage />} />
-        <Route path="/my-project" element={<MyProjects />} />
-        <Route path="/SkillBadges" element={<SkillBages />} />
-        <Route path="/notifications" element={<NotificationsPage />} />
-      </Routes>
-    </Router>
+    <div className={isDarkMode ? 'dark' : ''}>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Dashboard isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />} />
+          <Route path="/edit-profile" element={<EditProfilePage isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />} />
+          <Route path="/my-project" element={<MyProjects isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />} />
+          <Route path="/SkillBadges" element={<SkillBages isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />} />
+          <Route path="/notifications" element={<NotificationsPage isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />} />
+        </Routes>
+      </Router>
+    </div>
   );
 }
 

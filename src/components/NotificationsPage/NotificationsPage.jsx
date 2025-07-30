@@ -34,7 +34,7 @@ const notificationsData = [
   },
 ];
 
-const NotificationsPage = () => {
+const NotificationsPage = ({ isDarkMode, toggleDarkMode }) => {
  
   const [isSidebarVisible, setIsSidebarVisible] = useState(true);
 
@@ -44,13 +44,13 @@ const NotificationsPage = () => {
 
   return (
    
-    <div className="dashboard-container">
-      {isSidebarVisible && <Sidebar isSidebarVisible={isSidebarVisible} />}
+    <div className={`dashboard-container${isDarkMode ? ' dark' : ''}`}>
+      {isSidebarVisible && <Sidebar isSidebarVisible={isSidebarVisible} isDarkMode={isDarkMode} />}
       <div className={`main-content${isSidebarVisible ? '' : ' full-width'}`}>
-        <Header toggleSidebar={toggleSidebar} />
+        <Header toggleSidebar={toggleSidebar} isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
         
         {/* content in notification page */}
-        <div className="page-card">
+        <div className="page-card dark:bg-gray-700 dark:text-white">
           <h2 className="notifications-main-title">🔔 Notifications</h2>
           <div className="notifications-list">
 
@@ -68,7 +68,7 @@ const NotificationsPage = () => {
         </div>
 
       </div>
-      <RightSidebar />
+      <RightSidebar isDarkMode={isDarkMode} />
     </div>
   );
 };

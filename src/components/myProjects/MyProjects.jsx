@@ -4,7 +4,7 @@ import Sidebar from '../dashboard/Sidebar';
 import Header from '../dashboard/Header';
 import ProjectSubmissionForm from './ProjectSubmissionForm';
 
-function MyProjects() {
+function MyProjects({ isDarkMode, toggleDarkMode }) {
   const [isSidebarVisible, setIsSidebarVisible] = useState(true);
 
   const toggleSidebar = () => {
@@ -12,10 +12,10 @@ function MyProjects() {
   };
 
   return (
-    <div className="dashboard-container">
-      {isSidebarVisible && <Sidebar isSidebarVisible={isSidebarVisible} />}
+    <div className={`dashboard-container${isDarkMode ? ' dark' : ''}`}>
+      {isSidebarVisible && <Sidebar isSidebarVisible={isSidebarVisible} isDarkMode={isDarkMode} />}
       <div className={`main-content${isSidebarVisible ? '' : ' full-width'}`}>
-        <Header toggleSidebar={toggleSidebar} />
+        <Header toggleSidebar={toggleSidebar} isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
         <ProjectSubmissionForm />
       </div>
     </div>

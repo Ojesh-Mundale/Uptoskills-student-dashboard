@@ -29,20 +29,57 @@ body {
     flex-direction: column;
 }
 
+.dark .sidebar {
+    background-color: #111827; /* darker background for dark mode */
+    color: #d1d5db; /* lighter text for dark mode */
+}
+
+.dark .sidebar .nav-item:hover {
+    background-color: #374151; /* darker hover */
+}
+
+.dark .sidebar .nav-item.active {
+    background-color: #2563eb; /* blue highlight */
+}
+
+.dark .main-content {
+    background-color: #1f2937; /* dark background for main content */
+    color: #d1d5db; /* light text */
+}
+
+.dark .welcome-section,
+.dark .notice-board,
+.dark .chart-section,
+.dark .assignments-section,
+.dark .attendance-widget,
+.dark .calendar-widget,
+.dark .resources-widget,
+.dark .profile-progress,
+.dark .messages-widget {
+    background-color: #374151; /* dark card backgrounds */
+    color: #d1d5db;
+}
+
+.dark .header-btn {
+    background: #374151;
+    box-shadow: none;
+    color: #d1d5db;
+}
+
+.dark .header-btn:hover {
+    background: #4b5563;
+}
+
+.dark .profile-avatar {
+    border: 2px solid #6b7280;
+}
+
 .logo {
-   /* margin-bottom: 40px;*/
     display: block;
     margin-top: 0;
 }
 
-/*.logo-img{
-    font-size: 24px;
-    font-weight: 700;
-}*/
 
-.logo-highlight {
-    color: #06b6d4;
-}
 
 .nav-menu {
     flex: 1;
@@ -81,28 +118,16 @@ body {
     border-radius: 50%;
 }
 
-.logout-btn {
-    margin-left: auto;
-    background: none;
-    border: 1px solid #475569;
-    color: white;
-    padding: 6px 12px;
-    border-radius: 6px;
-    cursor: pointer;
-}
-
 /* Main Content */
 .main-content {
     flex: 1;
     padding: 20px;
-    /* Removed overflow-y to hide scrollbars but keep content visible */
-    /* overflow-y: auto; */
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none; 
+    -ms-overflow-style: none;  
 }
 
 .main-content::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, Opera */
+    display: none; 
 }
 
 .main-content.full-width {
@@ -570,12 +595,7 @@ body {
     font-size: 12px;
 }
 
-.expand-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-}
+
 
 .time-filter {
     border: 1px solid #e2e8f0;
@@ -620,9 +640,4 @@ body {
   padding: 20px;
 }
 
-.attendance-scroll-container {
-  display: flex;
-  overflow-x: auto;
-  gap: 1rem;
-  padding: 1rem 0;
-}
+

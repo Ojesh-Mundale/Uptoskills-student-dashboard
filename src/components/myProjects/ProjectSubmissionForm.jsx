@@ -43,7 +43,7 @@ function ProjectSubmissionForm() {
     <div className="min-h-screen bg-gradient-to-tr from-blue-100 to-indigo-200 flex items-center justify-center px-4 py-10">
       <div className="bg-white p-8 rounded-2xl shadow-2xl w-full max-w-xl border border-gray-200 relative">
         <h2 className="text-3xl font-extrabold text-center mb-4 text-indigo-700">
-          🚀 Student Project Submission
+          Student Project Submission
         </h2>
         <p className="text-center text-gray-500 mb-8">
           Submit your project details below.

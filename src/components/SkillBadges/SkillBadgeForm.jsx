@@ -4,7 +4,7 @@ import Header from '../dashboard/Header';
 import Sidebar from '../dashboard/Sidebar';
 import RightSidebar from '../dashboard/RightSidebar';
 
-const SkillBadgeForm = () => {
+const SkillBadgeForm = ({ isDarkMode, toggleDarkMode }) => {
   const [isSidebarVisible, setIsSidebarVisible] = useState(true);
   const [formData, setFormData] = useState({
     student_id: '',
@@ -33,15 +33,15 @@ const SkillBadgeForm = () => {
   };
 
   return (
-    <div className="dashboard-container">
-      {isSidebarVisible && <Sidebar isSidebarVisible={isSidebarVisible} />}
+    <div className={`dashboard-container${isDarkMode ? ' dark' : ''}`}>
+      {isSidebarVisible && <Sidebar isSidebarVisible={isSidebarVisible} isDarkMode={isDarkMode} />}
       <div className={`main-content${isSidebarVisible ? '' : ' full-width'}`}>
-        <Header toggleSidebar={toggleSidebar} />
+        <Header toggleSidebar={toggleSidebar} isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
 
-        <div className="p-6 bg-white rounded-lg shadow-md">
-          <h2 className="text-2xl font-semibold mb-6">Add New Skill Badge</h2>
+        <div className="p-6 bg-white rounded-lg shadow-md dark:bg-gray-700">
+          <h2 className="text-2xl font-semibold mb-6 dark:text-white">Add New Skill Badge</h2>
           <form className="space-y-4" onSubmit={handleSubmit}>
-            <label className="block">
+            <label className="block dark:text-white">
               Student ID:
               <input
                 type="number"
@@ -50,11 +50,11 @@ const SkillBadgeForm = () => {
                 value={formData.student_id}
                 onChange={handleChange}
                 required
-                className="w-full mt-1 p-2 border border-gray-300 rounded-md"
+                className="w-full mt-1 p-2 border border-gray-300 rounded-md dark:bg-gray-800 dark:border-gray-600 dark:text-white"
               />
             </label>
 
-            <label className="block">
+            <label className="block dark:text-white">
               Badge Name:
               <input
                 type="text"
@@ -63,11 +63,11 @@ const SkillBadgeForm = () => {
                 value={formData.badge_name}
                 onChange={handleChange}
                 required
-                className="w-full mt-1 p-2 border border-gray-300 rounded-md"
+                className="w-full mt-1 p-2 border border-gray-300 rounded-md dark:bg-gray-800 dark:border-gray-600 dark:text-white"
               />
             </label>
 
-            <label className="block">
+            <label className="block dark:text-white">
               Badge Description:
               <textarea
                 name="badge_description"
@@ -75,11 +75,11 @@ const SkillBadgeForm = () => {
                 value={formData.badge_description}
                 onChange={handleChange}
                 required
-                className="w-full mt-1 p-2 border border-gray-300 rounded-md"
+                className="w-full mt-1 p-2 border border-gray-300 rounded-md dark:bg-gray-800 dark:border-gray-600 dark:text-white"
               ></textarea>
             </label>
 
-            <label className="inline-flex items-center space-x-2">
+            <label className="inline-flex items-center space-x-2 dark:text-white">
               <input
                 type="checkbox"
                 name="verified"
@@ -100,7 +100,7 @@ const SkillBadgeForm = () => {
         </div>
       </div>
 
-      <RightSidebar />
+      <RightSidebar isDarkMode={isDarkMode} />
     </div>
   );
 };

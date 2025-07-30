@@ -4,7 +4,7 @@ import Header from '../dashboard/Header';
 import StudentProfileForm from './StudentProfileForm';
 import DomainsOfInterest from './DomainsOfInterest';
 
-const EditProfilePage = () => {
+const EditProfilePage = ({ isDarkMode, toggleDarkMode }) => {
   const [isSidebarVisible, setIsSidebarVisible] = useState(true);
   const [domainsOfInterest, setDomainsOfInterest] = useState([]);
   const [othersDomain, setOthersDomain] = useState('');
@@ -42,10 +42,10 @@ const EditProfilePage = () => {
   };
 
   return (
-    <div className="flex h-screen dashboard-container">
-      {isSidebarVisible && <Sidebar isSidebarVisible={isSidebarVisible} />}
+    <div className={`flex h-screen dashboard-container${isDarkMode ? ' dark' : ''}`}>
+      {isSidebarVisible && <Sidebar isSidebarVisible={isSidebarVisible} isDarkMode={isDarkMode} />}
       <div className={`flex-1 flex flex-col overflow-hidden main-content${isSidebarVisible ? '' : ' full-width'}`}>
-        <Header toggleSidebar={toggleSidebar} />
+        <Header toggleSidebar={toggleSidebar} isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
         <div className="flex-1 overflow-y-auto p-6 edit-profile-content flex gap-10">
           <StudentProfileForm onSubmit={handleFormSubmit} />
           <DomainsOfInterest selectedDomains={domainsOfInterest} onChange={handleDomainChange} othersValue={othersDomain} />
